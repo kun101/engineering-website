@@ -17,7 +17,7 @@ export const COMPONENTS_DATA = [
     id: 3,
     name: 'Thermal Management',
     desc: 'Microchannel cold plates, vapor chambers, and cryogenic phase-change thermal loops.',
-    image: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const COMPONENTS_DATA = [
     id: 6,
     name: 'Avionics and Aerospace',
     desc: 'Radiation-hardened flight chassis, CubeSat structures, and space-grade harness assemblies.',
-    image: 'https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1517976487502-536f98efd46a?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 7,
