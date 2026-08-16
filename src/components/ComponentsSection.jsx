@@ -35,7 +35,7 @@ export const COMPONENTS_DATA = [
     id: 6,
     name: 'Avionics and Aerospace',
     desc: 'Radiation-hardened flight chassis, CubeSat structures, and space-grade harness assemblies.',
-    image: 'https://images.unsplash.com/photo-1517976487502-536f98efd46a?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 7,
@@ -57,7 +57,16 @@ export default function ComponentsSection() {
           {COMPONENTS_DATA.map((item) => (
             <div key={item.id} className="component-visual-card">
               <div className="card-image-wrap">
-                <img src={item.image} alt={item.name} className="card-image" loading="lazy" />
+                <img 
+                  src={item.image} 
+                  alt={item.name} 
+                  className="card-image" 
+                  loading="lazy" 
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800';
+                  }}
+                />
                 <div className="card-image-overlay"></div>
               </div>
               <div className="card-content">
