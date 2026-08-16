@@ -111,49 +111,26 @@ body {
   animation: fadeSlideIn 0.95s var(--ease-snappy) 0.3s both;
 }
 
-/* Coronal Light Stream Traveling Along The Exact Planetary Limb */
-@keyframes coronalBeamFlow {
+/* Smooth Planetary Coronal Orbital Light Rotation on Existing Element */
+@keyframes planetCoronalOrbit {
   0% {
-    stroke-dashoffset: 2800;
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes coronalLimbPulse {
-  0%, 100% {
-    opacity: 0.65;
-    filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.7)) drop-shadow(0 0 30px rgba(249, 115, 22, 0.5));
+    transform: scale(1.15) rotate(0deg);
+    filter: brightness(1) contrast(1.02);
   }
   50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 40px rgba(250, 204, 21, 0.9)) drop-shadow(0 0 70px rgba(249, 115, 22, 0.7));
+    transform: scale(1.2) rotate(3.5deg);
+    filter: brightness(1.18) contrast(1.1) saturate(1.12);
+  }
+  100% {
+    transform: scale(1.15) rotate(0deg);
+    filter: brightness(1) contrast(1.02);
   }
 }
 
-.animate-coronal-beam-1 {
-  stroke-dasharray: 450 2350;
-  animation: coronalBeamFlow 4.2s linear infinite;
-  will-change: stroke-dashoffset, opacity;
-}
-
-.animate-coronal-beam-2 {
-  stroke-dasharray: 220 2580;
-  animation: coronalBeamFlow 4.2s linear infinite 2.1s;
-  will-change: stroke-dashoffset, opacity;
-}
-
-.animate-coronal-ambient {
-  animation: coronalLimbPulse 3.5s ease-in-out infinite;
+.animate-planet-coronal {
+  animation: planetCoronalOrbit 12s ease-in-out infinite;
+  transform-origin: -10% 110%;
+  will-change: transform, filter;
 }
 
 .font-instrument-serif {

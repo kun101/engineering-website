@@ -17,73 +17,14 @@ export default function ResponsiveHeroBanner({
 
     return (
         <section className="w-full isolate min-h-screen overflow-hidden relative bg-black flex flex-col justify-between items-center">
-            {/* Background Solar Arc Planetary Image */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <img
-                    src={backgroundImageUrl}
-                    alt="Background Planetary Flare"
-                    className="w-full h-full object-cover object-center"
-                />
-            </div>
-
-            {/* Glowing Light Beam Animating Along the Red Marked Planetary Arc */}
-            <svg 
-                className="absolute inset-0 w-full h-full pointer-events-none z-[1]" 
-                viewBox="0 0 1920 1080" 
-                preserveAspectRatio="none"
-            >
-                <defs>
-                    <linearGradient id="coronalBeamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-                        <stop offset="35%" stopColor="#fef08a" stopOpacity="0.9" />
-                        <stop offset="65%" stopColor="#ffffff" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#ea580c" stopOpacity="0" />
-                    </linearGradient>
-                    <filter id="coronalGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur2" />
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur3" />
-                        <feMerge>
-                            <feMergeNode in="blur3" />
-                            <feMergeNode in="blur2" />
-                            <feMergeNode in="blur1" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                {/* Base Glowing Path along the red marked planetary limb */}
-                <path 
-                    d="M 390 -40 C 780 120, 1280 430, 1780 1140" 
-                    fill="none" 
-                    stroke="rgba(250, 204, 21, 0.25)" 
-                    strokeWidth="3.5" 
-                    className="animate-coronal-ambient"
-                />
-
-                {/* Fast Flowing Coronal Photon Stream */}
-                <path 
-                    d="M 390 -40 C 780 120, 1280 430, 1780 1140" 
-                    fill="none" 
-                    stroke="url(#coronalBeamGrad)" 
-                    strokeWidth="4" 
-                    filter="url(#coronalGlow)"
-                    className="animate-coronal-beam-1"
-                />
-
-                {/* Secondary Cascading Energy Pulse */}
-                <path 
-                    d="M 390 -40 C 780 120, 1280 430, 1780 1140" 
-                    fill="none" 
-                    stroke="url(#coronalBeamGrad)" 
-                    strokeWidth="3" 
-                    filter="url(#coronalGlow)"
-                    className="animate-coronal-beam-2"
-                />
-            </svg>
-
+            {/* Existing Planetary Background Image with Coronal Light Motion */}
+            <img
+                src={backgroundImageUrl}
+                alt=""
+                className="w-full h-full object-cover object-center absolute inset-0 z-0 pointer-events-none animate-planet-coronal"
+            />
             {/* Subtle Vignette Gradient Overlay */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[2]" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
 
             {/* Unified Floating Navbar (Razor Sharp Edges) */}
             <header className="fixed top-6 left-0 right-0 z-30 flex justify-center items-center px-4">
