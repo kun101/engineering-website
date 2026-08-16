@@ -12,8 +12,8 @@ export default function Navbar({ onOpenRFQ }) {
   return (
     <header className="fixed top-4 sm:top-5 left-0 right-0 z-[100] flex justify-center items-center px-6 pointer-events-none">
       <div 
-        className="pointer-events-auto w-full max-w-7xl flex items-center justify-between rounded-none bg-neutral-950/90 border border-white/20 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10"
-        style={{ padding: '14px 28px', borderRadius: 0 }}
+        className="pointer-events-auto w-full max-w-[1152px] flex items-center justify-between rounded-none bg-neutral-950/90 border border-white/20 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10"
+        style={{ padding: '14px 24px', borderRadius: 0 }}
       >
         {/* Left: Brand Logo */}
         <a
@@ -67,7 +67,7 @@ export default function Navbar({ onOpenRFQ }) {
 
       {mobileMenuOpen && (
         <div 
-          className="pointer-events-auto md:hidden absolute top-18 left-6 right-6 max-w-7xl mx-auto bg-neutral-950/95 backdrop-blur-2xl rounded-none border border-white/20 flex flex-col gap-4 shadow-2xl p-5 z-[100]"
+          className="pointer-events-auto md:hidden absolute top-18 left-6 right-6 max-w-[1152px] mx-auto bg-neutral-950/95 backdrop-blur-2xl rounded-none border border-white/20 flex flex-col gap-4 shadow-2xl p-5 z-[100]"
           style={{ borderRadius: 0 }}
         >
           {navLinks.map((link, index) => {
