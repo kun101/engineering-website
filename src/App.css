@@ -1,4 +1,4 @@
-/* Yellow on Dark / Black Advanced Manufacturing Stylesheet - Razor Sharp Industrial */
+/* Yellow on Dark / Black Advanced Manufacturing Stylesheet - Razor Sharp & Snappy Physics */
 
 .app-container {
   min-height: 100vh;
@@ -44,12 +44,14 @@
   background: var(--bg-surface-primary);
   border: 1px solid var(--border-medium);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(234, 179, 8, 0.08);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.3s var(--ease-snappy), border-color 0.25s var(--ease-snappy), box-shadow 0.3s var(--ease-snappy);
+  will-change: transform;
 }
 
 .sticky-component-card:hover {
   border-color: var(--accent-yellow);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(234, 179, 8, 0.2);
+  transform: translateY(-2px);
 }
 
 .sticky-card-inner {
@@ -71,11 +73,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s var(--ease-snappy);
+  will-change: transform;
 }
 
 .sticky-component-card:hover .sticky-card-image {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .sticky-image-overlay {
@@ -85,6 +88,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(9, 9, 11, 0.85) 100%);
+  transition: opacity 0.3s var(--ease-snappy);
 }
 
 .sticky-card-content-side {
@@ -94,6 +98,11 @@
   justify-content: center;
   background: var(--bg-surface-primary);
   border-left: 1px solid var(--border-subtle);
+  transition: background-color 0.25s var(--ease-snappy);
+}
+
+.sticky-component-card:hover .sticky-card-content-side {
+  background: #0d0e13;
 }
 
 .sticky-card-title {
@@ -102,7 +111,7 @@
   color: var(--text-primary);
   margin-bottom: 16px;
   line-height: 1.2;
-  transition: color 0.15s ease;
+  transition: color 0.2s var(--ease-snappy);
 }
 
 .sticky-component-card:hover .sticky-card-title {
@@ -134,12 +143,14 @@
   background: var(--bg-surface-primary);
   border: 1px solid var(--border-medium);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(234, 179, 8, 0.06);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.3s var(--ease-snappy), border-color 0.25s var(--ease-snappy), box-shadow 0.3s var(--ease-snappy);
+  will-change: transform;
 }
 
 .sticky-subsystem-card:hover {
   border-color: var(--accent-yellow);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(234, 179, 8, 0.18);
+  transform: translateY(-2px);
 }
 
 .sticky-subsystem-inner {
@@ -157,16 +168,29 @@
   align-items: flex-start;
   gap: 12px;
   border-right: 1px solid var(--border-subtle);
+  transition: background-color 0.25s var(--ease-snappy);
+}
+
+.sticky-subsystem-card:hover .sticky-subsystem-left {
+  background: #15161c;
 }
 
 .subsystem-icon-box {
   width: 48px;
   height: 48px;
-  background: rgba(234, 179, 8, 0.1);
-  border: 1px solid rgba(234, 179, 8, 0.3);
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.25s var(--ease-snappy);
+}
+
+.sticky-subsystem-card:hover .subsystem-icon-box {
+  background: rgba(234, 179, 8, 0.18);
+  border-color: var(--accent-yellow);
+  transform: scale(1.06);
+  box-shadow: 0 0 16px rgba(234, 179, 8, 0.25);
 }
 
 .subsystem-scope-pill {
@@ -182,6 +206,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: background-color 0.25s var(--ease-snappy);
+}
+
+.sticky-subsystem-card:hover .sticky-subsystem-right {
+  background: #0d0e13;
 }
 
 .sticky-subsystem-title {
@@ -189,7 +218,7 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 10px;
-  transition: color 0.15s ease;
+  transition: color 0.2s var(--ease-snappy);
 }
 
 .sticky-subsystem-card:hover .sticky-subsystem-title {
@@ -212,6 +241,12 @@
   background: #000000;
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
+  transition: border-color 0.2s var(--ease-snappy), color 0.2s var(--ease-snappy);
+}
+
+.sticky-subsystem-card:hover .subsystem-standard-badge {
+  border-color: rgba(234, 179, 8, 0.4);
+  color: var(--text-secondary);
 }
 
 /* FOOTER */
@@ -235,6 +270,11 @@
   width: auto;
   display: block;
   margin-bottom: 8px;
+  transition: opacity 0.2s var(--ease-snappy);
+}
+
+.footer-logo-img:hover {
+  opacity: 0.85;
 }
 
 .footer-claim {
@@ -252,14 +292,14 @@
   color: var(--text-muted);
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.15s ease;
+  transition: color 0.2s var(--ease-snappy);
 }
 
 .footer-links a:hover {
   color: var(--accent-yellow);
 }
 
-/* MODAL - RAZOR SHARP */
+/* MODAL - RAZOR SHARP WITH SNAPPY ENTRANCE */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -275,6 +315,12 @@
   z-index: 200;
   padding: 24px;
   overflow-y: auto;
+  animation: modalFadeIn 0.25s var(--ease-snappy) forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modal-container {
@@ -287,6 +333,19 @@
   background: var(--bg-surface-primary);
   border: 1px solid var(--border-medium);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
+  animation: modalSlideUp 0.3s var(--ease-snappy) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .modal-close-btn {
@@ -302,11 +361,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.2s var(--ease-snappy);
 }
 
 .modal-close-btn:hover {
   color: var(--text-primary);
   border-color: var(--accent-yellow);
+  transform: rotate(90deg);
 }
 
 .rfq-title {
@@ -347,21 +408,27 @@
   background: var(--bg-surface-secondary);
   border: 1px solid var(--border-subtle);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.18s var(--ease-snappy);
 }
 
 .checkbox-card:hover {
   border-color: var(--border-medium);
+  transform: translateY(-1px);
+}
+
+.checkbox-card:active {
+  transform: scale(0.98);
 }
 
 .checkbox-card-active {
-  background: rgba(234, 179, 8, 0.1);
+  background: rgba(234, 179, 8, 0.12);
   border-color: var(--accent-yellow);
 }
 
 .checkbox-card-title {
   font-size: 13px;
   color: var(--text-secondary);
+  transition: color 0.18s var(--ease-snappy);
 }
 
 .checkbox-card-active .checkbox-card-title {
@@ -377,11 +444,12 @@
   color: var(--text-primary);
   font-size: 14px;
   outline: none;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.2s var(--ease-snappy), box-shadow 0.2s var(--ease-snappy);
 }
 
 .form-input:focus, .form-textarea:focus {
   border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.2);
 }
 
 .rfq-submit-btn {
