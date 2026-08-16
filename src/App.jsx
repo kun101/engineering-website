@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ResponsiveHeroBanner from './components/ui/responsive-hero-banner';
-import ComponentsSection from './components/ComponentsSection';
+import FUIBentoGridDark from './components/ui/bento';
 import SubsystemsSection from './components/SubsystemsSection';
 import Footer from './components/Footer';
 import RFQModal from './components/RFQModal';
@@ -13,7 +13,7 @@ export default function App() {
     <div className="app-container">
       <main>
         <ResponsiveHeroBanner onOpenRFQ={() => setIsRFQOpen(true)} />
-        <ComponentsSection />
+        <FUIBentoGridDark />
         <SubsystemsSection />
       </main>
       <Footer />
