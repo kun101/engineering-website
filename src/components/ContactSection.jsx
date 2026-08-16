@@ -6,8 +6,6 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    domain: 'Deep Tech & Hardware Engineering',
     message: ''
   });
 
@@ -30,7 +28,7 @@ export default function ContactSection() {
 
     const params = {
       heading: `MedPrax Engineering Enquiry from ${formData.name}`,
-      message: `Their details are as follows | NAME : ${formData.name} | EMAIL : ${formData.email} | COMPANY : ${formData.company || 'N/A'} | DOMAIN : ${formData.domain} | MESSAGE : ${formData.message} |`
+      message: `Their details are as follows | NAME : ${formData.name} | EMAIL : ${formData.email} | MESSAGE : ${formData.message} |`
     };
 
     try {
@@ -44,8 +42,6 @@ export default function ContactSection() {
       setFormData({
         name: '',
         email: '',
-        company: '',
-        domain: 'Deep Tech & Hardware Engineering',
         message: ''
       });
     } catch (err) {
@@ -130,7 +126,7 @@ export default function ContactSection() {
                 {/* Full Name */}
                 <div className="flex flex-col gap-2">
                   <label htmlFor="contact_name" className="text-xs font-semibold uppercase tracking-wider text-zinc-300 font-spline">
-                    Full Name <span className="text-[#eab308]">*</span>
+                    Name <span className="text-[#eab308]">*</span>
                   </label>
                   <input
                     id="contact_name"
@@ -145,10 +141,10 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Work Email */}
+                {/* Email */}
                 <div className="flex flex-col gap-2">
                   <label htmlFor="contact_email" className="text-xs font-semibold uppercase tracking-wider text-zinc-300 font-spline">
-                    Work Email <span className="text-[#eab308]">*</span>
+                    Email <span className="text-[#eab308]">*</span>
                   </label>
                   <input
                     id="contact_email"
@@ -164,60 +160,17 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {/* Organization / Company */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="contact_company" className="text-xs font-semibold uppercase tracking-wider text-zinc-300 font-spline">
-                    Company / Organization
-                  </label>
-                  <input
-                    id="contact_company"
-                    name="company"
-                    type="text"
-                    placeholder="e.g. DeepTech Labs"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full bg-black/60 border border-white/15 px-4 py-3 text-white text-sm focus:border-[#eab308] focus:outline-none font-spline placeholder:text-zinc-600 transition-colors"
-                    style={{ borderRadius: 0 }}
-                  />
-                </div>
-
-                {/* Primary Domain / Interest */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="contact_domain" className="text-xs font-semibold uppercase tracking-wider text-zinc-300 font-spline">
-                    Focus Area
-                  </label>
-                  <select
-                    id="contact_domain"
-                    name="domain"
-                    value={formData.domain}
-                    onChange={handleChange}
-                    className="w-full bg-black border border-white/15 px-4 py-3 text-white text-sm focus:border-[#eab308] focus:outline-none font-spline transition-colors"
-                    style={{ borderRadius: 0 }}
-                  >
-                    <option value="Deep Tech & Hardware Engineering">Deep Tech Hardware</option>
-                    <option value="Medical Devices">Medical Devices</option>
-                    <option value="Defense & Aerospace Platforms">Defense & Aerospace Platforms</option>
-                    <option value="Industrial Technology">Industrial Technology</option>
-                    <option value="Electronics & Microelectronics">Microelectronics & PCB</option>
-                    <option value="Precision Machining & Mechanical">Precision Machining & Mechanical</option>
-                    <option value="Thermal & Fluid Systems">Thermal & Fluid Systems</option>
-                    <option value="Subsystem Integration">Complete Subsystems</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Requirements / Message */}
+              {/* Message */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="contact_message" className="text-xs font-semibold uppercase tracking-wider text-zinc-300 font-spline">
-                  Project Requirements / Message <span className="text-[#eab308]">*</span>
+                  Message <span className="text-[#eab308]">*</span>
                 </label>
                 <textarea
                   id="contact_message"
                   name="message"
                   required
-                  rows={4}
-                  placeholder="Tell us what you are building, target specifications, tolerances, or schedule..."
+                  rows={5}
+                  placeholder="How can we help? Tell us about your project requirements, tolerances, or schedule..."
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full bg-black/60 border border-white/15 px-4 py-3 text-white text-sm focus:border-[#eab308] focus:outline-none font-spline placeholder:text-zinc-600 transition-colors resize-y"
@@ -233,7 +186,7 @@ export default function ContactSection() {
                   style={{ padding: '14px 36px', borderRadius: 0 }}
                   className="inline-flex items-center justify-center gap-2 bg-white text-neutral-950 hover:bg-neutral-100 font-bold text-sm font-spline transition-all cursor-pointer shadow-md disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
                 >
-                  <span>{status.submitting ? 'Sending...' : 'Send Enquiry'}</span>
+                  <span>{status.submitting ? 'Sending...' : 'Send Message'}</span>
                   <Send size={16} className={status.submitting ? 'animate-pulse' : ''} />
                 </button>
 
