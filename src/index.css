@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --color-background: var(--bg-0);
   --color-foreground: var(--text-100);
@@ -111,28 +111,6 @@ body {
   animation: fadeSlideIn 0.95s var(--ease-snappy) 0.3s both;
 }
 
-/* Smooth Planetary Coronal Orbital Light Rotation on Existing Element */
-@keyframes planetCoronalOrbit {
-  0% {
-    transform: scale(1.15) rotate(0deg);
-    filter: brightness(1) contrast(1.02);
-  }
-  50% {
-    transform: scale(1.2) rotate(3.5deg);
-    filter: brightness(1.18) contrast(1.1) saturate(1.12);
-  }
-  100% {
-    transform: scale(1.15) rotate(0deg);
-    filter: brightness(1) contrast(1.02);
-  }
-}
-
-.animate-planet-coronal {
-  animation: planetCoronalOrbit 12s ease-in-out infinite;
-  transform-origin: -10% 110%;
-  will-change: transform, filter;
-}
-
-.font-instrument-serif {
-  font-family: 'Instrument Serif', Georgia, serif;
+.font-playfair, .font-instrument-serif {
+  font-family: 'Playfair Display', Georgia, serif;
 }

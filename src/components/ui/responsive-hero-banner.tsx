@@ -126,9 +126,9 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 style={{ padding: '120px 24px 60px' }}
             >
                 <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                    {/* Headline */}
+                    {/* Headline in Playfair Display */}
                     <h1 
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-normal font-instrument-serif animate-fade-slide-in-1"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-normal font-playfair animate-fade-slide-in-1"
                         style={{ marginBottom: '28px', lineHeight: 1.12 }}
                     >
                         {title}

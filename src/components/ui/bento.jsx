@@ -6,7 +6,7 @@ export default function FUIBentoGridDark() {
   return (
     <section id="components" className="py-24 container mx-auto px-6 max-w-7xl">
       <div className="flex flex-col mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-instrument-serif">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-playfair">
           Components
         </h2>
         <p className="max-w-3xl text-lg sm:text-xl font-medium tracking-tight mt-3 text-white/70">
