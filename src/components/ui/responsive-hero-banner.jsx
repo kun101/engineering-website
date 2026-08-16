@@ -8,7 +8,7 @@ export default function ResponsiveHeroBanner({
         { label: "Subsystems", href: "#subsystems" }
     ],
     ctaButtonText = "Contact Us",
-    title = "MedPrax Engineering",
+    title = "Engineering",
     titleLine2 = "Hardware for Deep Tech",
     description = "Catering to companies building in Deep Tech. We help you build Medical Devices, Defense & Aerospace Platforms, Industrial Technology, and more. We will help companies manufacture.",
     onOpenRFQ
