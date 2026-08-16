@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="engineering-footer">
+    <footer className="engineering-footer mt-10">
       <div className="container footer-container">
         <div className="footer-brand">
           <a href="#" aria-label="MedPrax Engineering">

@@ -39,7 +39,7 @@ export default function FUIBentoGridDark() {
           description="5-axis CNC milling, Swiss micro-turning, wire EDM, and sub-micron structural enclosures."
           graphic={
             <img
-              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=1200"
+              src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=1200"
               alt="Precision Machining"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
