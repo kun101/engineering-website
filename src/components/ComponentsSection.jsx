@@ -47,31 +47,42 @@ export const COMPONENTS_DATA = [
 
 export default function ComponentsSection() {
   return (
-    <section id="components" className="section-padding">
+    <section id="components" className="section-padding components-sticky-section">
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Components</h2>
         </div>
 
-        <div className="components-image-grid">
-          {COMPONENTS_DATA.map((item) => (
-            <div key={item.id} className="component-visual-card">
-              <div className="card-image-wrap">
-                <img 
-                  src={item.image} 
-                  alt={item.name} 
-                  className="card-image" 
-                  loading="lazy" 
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800';
-                  }}
-                />
-                <div className="card-image-overlay"></div>
-              </div>
-              <div className="card-content">
-                <h3 className="card-title">{item.name}</h3>
-                <p className="card-desc">{item.desc}</p>
+        {/* Integrated Sticky Scrolling Cards Container */}
+        <div className="components-sticky-container">
+          {COMPONENTS_DATA.map((item, idx) => (
+            <div 
+              key={item.id} 
+              className="sticky-component-card"
+              style={{
+                top: `calc(100px + ${idx * 24}px)`,
+                zIndex: idx + 1
+              }}
+            >
+              <div className="sticky-card-inner">
+                <div className="sticky-card-image-side">
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="sticky-card-image" 
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800';
+                    }}
+                  />
+                  <div className="sticky-image-overlay"></div>
+                </div>
+                
+                <div className="sticky-card-content-side">
+                  <h3 className="sticky-card-title">{item.name}</h3>
+                  <p className="sticky-card-desc">{item.desc}</p>
+                </div>
               </div>
             </div>
           ))}
