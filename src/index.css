@@ -38,18 +38,14 @@
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-canvas);
   color: var(--text-100);
   font-family: var(--font-sans);
