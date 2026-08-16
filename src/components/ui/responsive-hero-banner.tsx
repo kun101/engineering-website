@@ -35,29 +35,29 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
     return (
         <section className="w-full isolate min-h-screen overflow-hidden relative bg-black flex flex-col justify-between items-center">
-            {/* Real-time WebGL Fragment Shader with Light Moving Along the Planetary Arc */}
+            {/* Real-time WebGL Fragment Shader (Shifted up & far right) */}
             <PlanetShader />
 
             {/* Subtle Vignette Gradient Overlay */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
 
-            {/* Unified Floating Navbar (Razor Sharp Edges) */}
-            <header className="fixed top-6 left-0 right-0 z-30 flex justify-center items-center px-4">
+            {/* Always-on-top Wide Floating Navbar */}
+            <header className="fixed top-4 sm:top-5 left-0 right-0 z-50 flex justify-center items-center px-4 sm:px-8 pointer-events-none">
                 <div 
-                    className="flex items-center gap-3 sm:gap-6 rounded-none bg-neutral-950/85 border border-white/20 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10"
-                    style={{ padding: '6px 8px 6px 16px', borderRadius: 0 }}
+                    className="pointer-events-auto w-full max-w-5xl flex items-center justify-between rounded-none bg-neutral-950/90 border border-white/20 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10"
+                    style={{ padding: '8px 12px 8px 24px', borderRadius: 0 }}
                 >
                     {/* Brand Logo */}
                     <a
                         href="#"
-                        className="inline-flex items-center pr-2"
+                        className="inline-flex items-center"
                         aria-label="MedPrax Engineering"
                     >
                         <img src={logoUrl} alt="MedPrax Engineering" className="h-7 sm:h-8 w-auto" />
                     </a>
 
-                    {/* Navigation Links */}
-                    <nav className="hidden md:flex items-center gap-1">
+                    {/* Navigation Links in Center */}
+                    <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link, index) => (
                             <a
                                 key={index}
@@ -72,46 +72,48 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         ))}
                     </nav>
 
-                    {/* Contact Us CTA Button with sharp edges */}
-                    <button
-                        onClick={onOpenRFQ}
-                        style={{ padding: '10px 22px', borderRadius: 0 }}
-                        className="inline-flex items-center gap-1.5 rounded-none bg-white text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-spline transition-all cursor-pointer shadow-md hover:scale-105"
-                    >
-                        <span>{ctaButtonText}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
-                            <path d="M7 7h10v10" />
-                            <path d="M7 17 17 7" />
-                        </svg>
-                    </button>
+                    {/* Right Action Button & Mobile Toggle */}
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={onOpenRFQ}
+                            style={{ padding: '10px 24px', borderRadius: 0 }}
+                            className="inline-flex items-center gap-2 rounded-none bg-white text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-spline transition-all cursor-pointer shadow-md hover:scale-105"
+                        >
+                            <span>{ctaButtonText}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
+                        </button>
 
-                    {/* Mobile Hamburger toggle */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-none bg-white/10 text-white"
-                        aria-expanded={mobileMenuOpen}
-                        aria-label="Toggle menu"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M4 5h16" />
-                            <path d="M4 12h16" />
-                            <path d="M4 19h16" />
-                        </svg>
-                    </button>
+                        {/* Mobile Hamburger toggle */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-none bg-white/10 text-white"
+                            aria-expanded={mobileMenuOpen}
+                            aria-label="Toggle menu"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M4 5h16" />
+                                <path d="M4 12h16" />
+                                <path d="M4 19h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 {mobileMenuOpen && (
                     <div 
-                        className="md:hidden mt-3 bg-neutral-950/95 backdrop-blur-2xl rounded-none border border-white/20 flex flex-col gap-3 shadow-2xl max-w-xs w-full"
-                        style={{ padding: '16px', borderRadius: 0 }}
+                        className="pointer-events-auto md:hidden absolute top-16 left-4 right-4 bg-neutral-950/95 backdrop-blur-2xl rounded-none border border-white/20 flex flex-col gap-3 shadow-2xl p-4"
+                        style={{ borderRadius: 0 }}
                     >
                         {navLinks.map((link, index) => (
                             <a
                                 key={index}
                                 href={link.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                style={{ padding: '8px 12px' }}
-                                className="text-sm font-medium text-white/80 hover:text-white text-center font-spline"
+                                style={{ padding: '10px 16px' }}
+                                className="text-sm font-medium text-white/80 hover:text-white font-spline"
                             >
                                 {link.label}
                             </a>
@@ -123,7 +125,7 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             {/* Centered Hero Content */}
             <div 
                 className="z-10 relative flex-1 flex flex-col items-center justify-center my-auto w-full"
-                style={{ padding: '120px 24px 60px' }}
+                style={{ padding: '140px 24px 60px' }}
             >
                 <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
                     {/* Headline: Line 1 (Engineering Hardware) fits in 1 single line, Line 2 (for Deep Tech) smaller */}
@@ -139,7 +141,7 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         </span>
                     </h1>
 
-                    {/* Narrative Description without 'We will help companies manufacture.' */}
+                    {/* Narrative Description */}
                     <p 
                         className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto font-spline animate-fade-slide-in-2"
                         style={{ marginBottom: '36px', lineHeight: 1.7 }}

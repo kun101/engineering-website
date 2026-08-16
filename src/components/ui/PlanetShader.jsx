@@ -28,10 +28,9 @@ void main() {
   vec2 p = uv;
   p.x *= aspect;
 
-  // Planet sphere center and radius shifted to the FAR RIGHT
-  // Prevents intersection with centered hero headline text
-  vec2 center = vec2(aspect * 0.42, -0.82);
-  float radius = 1.85;
+  // Planet sphere center and radius shifted FURTHER UP and to the FAR RIGHT
+  vec2 center = vec2(aspect * 0.62, -0.45);
+  float radius = 1.68;
 
   // Distance from center of the planet
   float d = length(p - center);
@@ -41,7 +40,7 @@ void main() {
   float angle = atan(p.y - center.y, p.x - center.x);
   
   // Normalized angle along the visible arc [0.0 (top right) -> 1.0 (bottom right)]
-  float t = (angle - 0.45) / 0.75;
+  float t = (angle - 0.55) / 0.85;
 
   // Primary light pulse traveling along the circular rim
   float speed = 0.22;
