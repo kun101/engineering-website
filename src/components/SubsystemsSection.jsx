@@ -81,9 +81,16 @@ export const SUBSYSTEMS_DATA = [
 
 export default function SubsystemsSection() {
   return (
-    <section id="subsystems" className="pt-32 pb-24 mb-24 sm:mb-36 container mx-auto px-6 max-w-7xl">
-      {/* Center-aligned Section Header with generous top margin */}
-      <div className="flex flex-col items-center text-center max-w-3xl mx-auto mt-20 sm:mt-28 mb-16 sm:mb-20">
+    <section 
+      id="subsystems" 
+      className="container mx-auto px-6 max-w-7xl"
+      style={{ paddingTop: '160px', paddingBottom: '160px' }}
+    >
+      {/* Center-aligned Section Header with distinct top margin */}
+      <div 
+        className="flex flex-col items-center text-center max-w-3xl mx-auto"
+        style={{ marginTop: '40px', marginBottom: '80px' }}
+      >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white font-spline">
           Subsystems
         </h2>

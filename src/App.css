@@ -253,8 +253,8 @@
 .engineering-footer {
   background: #000000;
   border-top: 1px solid var(--border-subtle);
-  padding: 48px 0;
-  margin-top: auto;
+  padding: 64px 0;
+  margin-top: 160px !important;
 }
 
 .footer-container {
