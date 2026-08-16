@@ -23,7 +23,7 @@ export const COMPONENTS_DATA = [
     id: 4,
     name: 'Fluid Systems',
     desc: 'High-pressure diffusion-bonded manifolds, proportional micro-valves, and hermetic fluidics.',
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 5,
