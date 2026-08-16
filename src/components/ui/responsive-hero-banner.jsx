@@ -10,7 +10,7 @@ export default function ResponsiveHeroBanner({
     ctaButtonText = "Contact Us",
     title = "Engineering Hardware",
     subtitle = "for Deep Tech",
-    description = "Catering to companies building in Deep Tech. We help you build Medical Devices, Defense & Aerospace Platforms, Industrial Technology, and more. We will help companies manufacture.",
+    description = "Catering to companies building in Deep Tech. We help you build Medical Devices, Defense & Aerospace Platforms, Industrial Technology, and more.",
     onOpenRFQ
 }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -121,7 +121,7 @@ export default function ResponsiveHeroBanner({
                         </span>
                     </h1>
 
-                    {/* Narrative Description */}
+                    {/* Narrative Description without 'We will help companies manufacture.' */}
                     <p 
                         className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto font-spline animate-fade-slide-in-2"
                         style={{ marginBottom: '36px', lineHeight: 1.7 }}

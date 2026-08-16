@@ -31,17 +31,20 @@ export default function Hero({ onOpenRFQ }) {
 
       <div className="container hero-content-wrapper">
         <h1 className="hero-headline">
-          MedPrax Engineering
+          Engineering Hardware
+          <span className="block text-3xl font-medium text-white/80 mt-2">
+            for Deep Tech
+          </span>
         </h1>
 
         <p className="hero-lead-text">
-          Catering to companies building in Deep Tech. We help you build <strong>Medical Devices</strong>, <strong>Defense &amp; Aerospace Platforms</strong>, <strong>Industrial Technology</strong>, and more. We will help companies manufacture.
+          Catering to companies building in Deep Tech. We help you build <strong>Medical Devices</strong>, <strong>Defense &amp; Aerospace Platforms</strong>, <strong>Industrial Technology</strong>, and more.
         </p>
 
         {/* Single Primary Action */}
         <div className="hero-actions-row">
           <button className="btn-primary btn-hero-cta" onClick={onOpenRFQ}>
-            Request Engineering Review
+            Contact Us
           </button>
         </div>
       </div>
