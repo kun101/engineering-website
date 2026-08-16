@@ -38,7 +38,7 @@ export default function FUIBentoGridDark() {
           description="5-axis CNC milling, Swiss micro-turning, wire EDM, and sub-micron structural enclosures."
           graphic={
             <img
-              src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200"
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200"
               alt="Precision Machining"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
@@ -83,7 +83,7 @@ export default function FUIBentoGridDark() {
           description="Frameless torque motors, zero-backlash harmonic drives, and precision linear stages."
           graphic={
             <img
-              src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=1200"
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200"
               alt="Actuation and Motion"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
@@ -113,7 +113,7 @@ export default function FUIBentoGridDark() {
           description="Refractory superalloys, advanced technical ceramics, additive metals, and composite structures."
           graphic={
             <img
-              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200"
+              src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&q=80&w=1200"
               alt="Materials"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
