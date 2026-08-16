@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Spline Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Spline Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-background: var(--bg-0);
   --color-foreground: var(--text-100);
 }
@@ -37,14 +37,15 @@
   --accent-yellow-dark: #ca8a04;
   --accent-yellow-glow: rgba(234, 179, 8, 0.25);
   
-  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
   border-radius: 0px !important;
+  font-family: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 html {
@@ -57,7 +58,7 @@ body {
   padding: 0;
   background-color: var(--bg-canvas);
   color: var(--text-100);
-  font-family: var(--font-sans);
+  font-family: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -111,6 +112,6 @@ body {
   animation: fadeSlideIn 0.95s var(--ease-snappy) 0.3s both;
 }
 
-.font-playfair, .font-instrument-serif {
-  font-family: 'Playfair Display', Georgia, serif;
+.font-spline, .font-playfair, .font-instrument-serif {
+  font-family: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }

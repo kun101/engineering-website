@@ -45,7 +45,7 @@ export default function ResponsiveHeroBanner({
                                 key={index}
                                 href={link.href}
                                 style={{ padding: '8px 16px', borderRadius: 0 }}
-                                className={`text-sm font-medium hover:text-white font-sans transition-colors rounded-none ${
+                                className={`text-sm font-medium hover:text-white font-spline transition-colors rounded-none ${
                                     link.isActive ? 'text-white font-semibold' : 'text-neutral-300'
                                 }`}
                             >
@@ -58,7 +58,7 @@ export default function ResponsiveHeroBanner({
                     <button
                         onClick={onOpenRFQ}
                         style={{ padding: '10px 22px', borderRadius: 0 }}
-                        className="inline-flex items-center gap-1.5 rounded-none bg-white text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-sans transition-all cursor-pointer shadow-md hover:scale-105"
+                        className="inline-flex items-center gap-1.5 rounded-none bg-white text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-spline transition-all cursor-pointer shadow-md hover:scale-105"
                     >
                         <span>{ctaButtonText}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
@@ -93,7 +93,7 @@ export default function ResponsiveHeroBanner({
                                 href={link.href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 style={{ padding: '8px 12px' }}
-                                className="text-sm font-medium text-white/80 hover:text-white text-center"
+                                className="text-sm font-medium text-white/80 hover:text-white text-center font-spline"
                             >
                                 {link.label}
                             </a>
@@ -108,10 +108,10 @@ export default function ResponsiveHeroBanner({
                 style={{ padding: '120px 24px 60px' }}
             >
                 <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                    {/* Headline in Playfair Display */}
+                    {/* Headline in Spline Sans */}
                     <h1 
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-normal font-playfair animate-fade-slide-in-1"
-                        style={{ marginBottom: '28px', lineHeight: 1.12 }}
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight font-spline animate-fade-slide-in-1"
+                        style={{ marginBottom: '28px', lineHeight: 1.08 }}
                     >
                         {title}
                         <br />
@@ -120,7 +120,7 @@ export default function ResponsiveHeroBanner({
 
                     {/* Narrative Description */}
                     <p 
-                        className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto font-sans animate-fade-slide-in-2"
+                        className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto font-spline animate-fade-slide-in-2"
                         style={{ marginBottom: '36px', lineHeight: 1.7 }}
                     >
                         {description}
@@ -131,7 +131,7 @@ export default function ResponsiveHeroBanner({
                         <button
                             onClick={onOpenRFQ}
                             style={{ padding: '14px 36px', fontSize: '15px', borderRadius: 0 }}
-                            className="inline-flex items-center justify-center gap-2 hover:bg-neutral-100 font-bold text-neutral-950 bg-white rounded-none font-sans shadow-[0_0_30px_rgba(255,255,255,0.25)] transition-all cursor-pointer hover:scale-105"
+                            className="inline-flex items-center justify-center gap-2 hover:bg-neutral-100 font-bold text-neutral-950 bg-white rounded-none font-spline shadow-[0_0_30px_rgba(255,255,255,0.25)] transition-all cursor-pointer hover:scale-105"
                         >
                             <span>Contact Us</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
