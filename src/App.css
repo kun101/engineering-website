@@ -252,6 +252,25 @@
   transition: all 0.2s ease;
 }
 
+.subsystem-card-icon {
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.subsystem-clean-card:hover .subsystem-card-icon {
+  background: rgba(234, 179, 8, 0.16);
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+}
+
 .subsystem-clean-card:hover {
   border-color: var(--accent-yellow);
   background-color: var(--bg-surface-secondary);
