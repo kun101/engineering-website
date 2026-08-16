@@ -81,8 +81,8 @@ export const SUBSYSTEMS_DATA = [
 
 export default function SubsystemsSection() {
   return (
-    <section id="subsystems" className="py-32 container mx-auto px-6 max-w-7xl">
-      {/* Center-aligned Section Header with generous padding */}
+    <section id="subsystems" className="pt-40 sm:pt-48 pb-32 container mx-auto px-6 max-w-7xl">
+      {/* Center-aligned Section Header with generous top breathing room */}
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white font-spline">
           Subsystems
