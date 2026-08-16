@@ -28,31 +28,32 @@ export default function ResponsiveHeroBanner({
             {/* Background Solar Arc Flare Image */}
             <img
                 src={backgroundImageUrl}
-                alt=""
+                alt="Background Flare"
                 className="w-full h-full object-cover object-center absolute inset-0 z-0 pointer-events-none"
             />
-            {/* Gradient Overlay for Legibility */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/70 z-[1]" />
+            {/* Subtle Vignette Gradient Overlay */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 z-[1]" />
 
             {/* Header Navigation */}
-            <header className="z-20 relative w-full pt-6">
+            <header className="z-20 relative w-full pt-6 sm:pt-8">
                 <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
                     <a
                         href="#"
-                        className="inline-flex items-center"
+                        className="inline-flex items-center gap-2"
                         aria-label="MedPrax Engineering"
                     >
-                        <img src={logoUrl} alt="MedPrax Engineering" className="h-9 w-auto" />
+                        <img src={logoUrl} alt="MedPrax Engineering" className="h-9 sm:h-10 w-auto" />
                     </a>
 
+                    {/* Glassmorphic Nav Pill */}
                     <nav className="hidden md:flex items-center gap-2">
-                        <div className="flex items-center gap-1 rounded-full bg-white/5 px-2 py-1 ring-1 ring-white/10 backdrop-blur">
+                        <div className="flex items-center gap-1 rounded-full bg-neutral-900/80 border border-white/20 px-2 py-1.5 backdrop-blur-xl shadow-lg">
                             {navLinks.map((link, index) => (
                                 <a
                                     key={index}
                                     href={link.href}
-                                    className={`px-3.5 py-1.5 text-sm font-medium hover:text-white font-sans transition-colors ${
-                                        link.isActive ? 'text-white/90' : 'text-white/70'
+                                    className={`px-4 py-2 text-sm font-medium hover:text-white font-sans transition-colors rounded-full ${
+                                        link.isActive ? 'text-white font-semibold' : 'text-neutral-300'
                                     }`}
                                 >
                                     {link.label}
@@ -60,10 +61,10 @@ export default function ResponsiveHeroBanner({
                             ))}
                             <button
                                 onClick={onOpenRFQ}
-                                className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-neutral-950 hover:bg-white/90 font-sans transition-colors cursor-pointer"
+                                className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-sans transition-all cursor-pointer shadow-md"
                             >
                                 <span>{ctaButtonText}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                                     <path d="M7 7h10v10" />
                                     <path d="M7 17 17 7" />
                                 </svg>
@@ -73,7 +74,7 @@ export default function ResponsiveHeroBanner({
 
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur text-white"
+                        className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900/80 border border-white/20 backdrop-blur text-white"
                         aria-expanded={mobileMenuOpen}
                         aria-label="Toggle menu"
                     >
@@ -86,20 +87,20 @@ export default function ResponsiveHeroBanner({
                 </div>
 
                 {mobileMenuOpen && (
-                    <div className="md:hidden mx-6 mt-3 p-4 bg-zinc-950/95 backdrop-blur-md rounded-2xl border border-white/10 flex flex-col gap-3">
+                    <div className="md:hidden mx-6 mt-3 p-4 bg-neutral-950/95 backdrop-blur-xl rounded-2xl border border-white/15 flex flex-col gap-3 shadow-2xl">
                         {navLinks.map((link, index) => (
                             <a
                                 key={index}
                                 href={link.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-sm font-medium text-white/80 hover:text-white px-2 py-1"
+                                className="text-sm font-medium text-white/80 hover:text-white px-3 py-2"
                             >
                                 {link.label}
                             </a>
                         ))}
                         <button
                             onClick={() => { setMobileMenuOpen(false); onOpenRFQ?.(); }}
-                            className="w-full bg-white text-neutral-950 font-semibold py-2 rounded-full text-sm text-center"
+                            className="w-full bg-white text-neutral-950 font-bold py-2.5 rounded-full text-sm text-center shadow-lg"
                         >
                             {ctaButtonText}
                         </button>
@@ -107,12 +108,12 @@ export default function ResponsiveHeroBanner({
                 )}
             </header>
 
-            {/* Centered Main Banner Content */}
-            <div className="z-10 relative flex-1 flex flex-col items-center justify-center my-auto py-20 px-6">
-                <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+            {/* Centered Hero Content */}
+            <div className="z-10 relative flex-1 flex flex-col items-center justify-center my-auto py-16 sm:py-24 px-6">
+                <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
                     {/* Badge */}
-                    <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-3 py-1.5 ring-1 ring-white/15 backdrop-blur animate-fade-slide-in-1">
-                        <span className="inline-flex items-center text-xs font-semibold text-neutral-900 bg-white/90 rounded-full py-0.5 px-2.5 font-sans">
+                    <div className="mb-8 inline-flex items-center gap-3 rounded-full bg-neutral-900/80 border border-white/20 px-3.5 py-1.5 backdrop-blur-xl shadow-lg animate-fade-slide-in-1">
+                        <span className="inline-flex items-center text-xs font-bold text-neutral-950 bg-white rounded-full py-0.5 px-2.5 font-sans tracking-wide uppercase">
                             {badgeLabel}
                         </span>
                         <span className="text-sm font-medium text-white/90 font-sans">
@@ -121,22 +122,22 @@ export default function ResponsiveHeroBanner({
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-tight leading-[1.08] mb-6 font-instrument-serif animate-fade-slide-in-2">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-normal leading-[1.1] mb-8 font-instrument-serif animate-fade-slide-in-2">
                         {title}
                         <br />
                         {titleLine2}
                     </h1>
 
-                    {/* Description */}
-                    <p className="text-base sm:text-lg animate-fade-slide-in-3 text-white/80 max-w-2xl mx-auto leading-relaxed mb-10 font-sans">
+                    {/* Narrative Description */}
+                    <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed mb-10 font-sans animate-fade-slide-in-3">
                         {description}
                     </p>
 
-                    {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row sm:gap-4 gap-3 items-center justify-center animate-fade-slide-in-4 w-full">
+                    {/* Action Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-center animate-fade-slide-in-4 w-full">
                         <button
                             onClick={onOpenRFQ}
-                            className="inline-flex items-center justify-center gap-2 hover:bg-white/15 text-sm font-medium text-white bg-white/10 ring-white/15 ring-1 rounded-full py-3 px-6 font-sans backdrop-blur transition-all cursor-pointer"
+                            className="inline-flex items-center justify-center gap-2 hover:bg-neutral-800 text-sm font-medium text-white bg-neutral-900/90 border border-white/25 rounded-full py-3 px-6 font-sans backdrop-blur-xl shadow-xl transition-all cursor-pointer hover:border-white/40"
                         >
                             <span>{primaryButtonText}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
@@ -146,7 +147,7 @@ export default function ResponsiveHeroBanner({
                         </button>
                         <a
                             href={secondaryButtonHref}
-                            className="inline-flex items-center justify-center gap-2 rounded-full bg-transparent px-5 py-3 text-sm font-medium text-white/90 hover:text-white font-sans transition-colors"
+                            className="inline-flex items-center justify-center gap-2 rounded-full bg-transparent hover:bg-white/5 px-6 py-3 text-sm font-medium text-white/90 hover:text-white font-sans transition-colors cursor-pointer"
                         >
                             <span>{secondaryButtonText}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -157,8 +158,8 @@ export default function ResponsiveHeroBanner({
                 </div>
             </div>
 
-            {/* Bottom Padding spacer (no brand logos) */}
-            <div className="h-12"></div>
+            {/* Bottom Spacer */}
+            <div className="h-16"></div>
         </section>
     );
 }
