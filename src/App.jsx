@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from './components/Navbar';
 import ResponsiveHeroBanner from './components/ui/responsive-hero-banner';
 import FUIBentoGridDark from './components/ui/bento';
 import SubsystemsSection from './components/SubsystemsSection';
@@ -11,6 +12,8 @@ export default function App() {
 
   return (
     <div className="app-container">
+      {/* Top-level persistent Navbar above all sections and cards */}
+      <Navbar onOpenRFQ={() => setIsRFQOpen(true)} />
       <main>
         <ResponsiveHeroBanner onOpenRFQ={() => setIsRFQOpen(true)} />
         <FUIBentoGridDark />
