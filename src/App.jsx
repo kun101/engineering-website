@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import ResponsiveHeroBanner from './components/ui/responsive-hero-banner';
 import ComponentsSection from './components/ComponentsSection';
 import SubsystemsSection from './components/SubsystemsSection';
 import Footer from './components/Footer';
@@ -12,9 +11,8 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <Navbar />
       <main>
-        <Hero onOpenRFQ={() => setIsRFQOpen(true)} />
+        <ResponsiveHeroBanner onOpenRFQ={() => setIsRFQOpen(true)} />
         <ComponentsSection />
         <SubsystemsSection />
       </main>
