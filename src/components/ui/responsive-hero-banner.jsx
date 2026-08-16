@@ -8,8 +8,8 @@ export default function ResponsiveHeroBanner({
         { label: "Subsystems", href: "#subsystems" }
     ],
     ctaButtonText = "Contact Us",
-    title = "Engineering",
-    titleLine2 = "Hardware for Deep Tech",
+    title = "Engineering Hardware",
+    subtitle = "for Deep Tech",
     description = "Catering to companies building in Deep Tech. We help you build Medical Devices, Defense & Aerospace Platforms, Industrial Technology, and more. We will help companies manufacture.",
     onOpenRFQ
 }) {
@@ -108,14 +108,17 @@ export default function ResponsiveHeroBanner({
                 style={{ padding: '120px 24px 60px' }}
             >
                 <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                    {/* Headline in Spline Sans */}
+                    {/* Headline in 2 Lines: Line 1 Main, Line 2 Smaller */}
                     <h1 
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight font-spline animate-fade-slide-in-1"
-                        style={{ marginBottom: '28px', lineHeight: 1.08 }}
+                        className="font-bold text-white tracking-tight font-spline animate-fade-slide-in-1"
+                        style={{ marginBottom: '28px' }}
                     >
-                        {title}
-                        <br />
-                        {titleLine2}
+                        <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05]">
+                            {title}
+                        </span>
+                        <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white/80 mt-3 leading-[1.1] tracking-normal">
+                            {subtitle}
+                        </span>
                     </h1>
 
                     {/* Narrative Description */}
