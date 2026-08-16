@@ -28,9 +28,10 @@ void main() {
   vec2 p = uv;
   p.x *= aspect;
 
-  // Planet sphere center and radius (calibrated to exact diagonal arc)
-  vec2 center = vec2(-0.25 * aspect, -0.45);
-  float radius = 1.62;
+  // Planet sphere center and radius shifted to the FAR RIGHT
+  // Prevents intersection with centered hero headline text
+  vec2 center = vec2(aspect * 0.42, -0.82);
+  float radius = 1.85;
 
   // Distance from center of the planet
   float d = length(p - center);
@@ -39,8 +40,8 @@ void main() {
   // Angle around the planet center
   float angle = atan(p.y - center.y, p.x - center.x);
   
-  // Normalized angle along the visible arc [0.0 (top) -> 1.0 (bottom right)]
-  float t = (angle - 0.15) / 1.1;
+  // Normalized angle along the visible arc [0.0 (top right) -> 1.0 (bottom right)]
+  float t = (angle - 0.45) / 0.75;
 
   // Primary light pulse traveling along the circular rim
   float speed = 0.22;
@@ -71,7 +72,7 @@ void main() {
   float dynamicHalo = deepHalo * (1.0 + totalPulse * 0.8);
 
   // Color layers
-  vec3 col = vec3(0.015, 0.015, 0.02); // Cosmic void base
+  vec3 col = vec3(0.012, 0.012, 0.015); // Cosmic void base
   
   // Ambient halo
   col += vec3(0.9, 0.35, 0.05) * dynamicHalo;
@@ -89,7 +90,7 @@ void main() {
   if (d < radius) {
     float depth = (radius - d) / radius;
     float bodyOcclusion = smoothstep(0.0, 0.08, depth);
-    col = mix(col, vec3(0.01, 0.01, 0.015), bodyOcclusion * 0.85);
+    col = mix(col, vec3(0.008, 0.008, 0.012), bodyOcclusion * 0.85);
   }
 
   // Subtle film grain
