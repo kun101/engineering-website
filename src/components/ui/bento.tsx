@@ -28,7 +28,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-3 rounded-2xl"
+          className="lg:col-span-3 rounded-none"
         />
 
         {/* 2. Precision Machining & Mechanical */}
@@ -43,7 +43,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-3 rounded-2xl"
+          className="lg:col-span-3 rounded-none"
         />
 
         {/* 3. Thermal Management */}
@@ -58,7 +58,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-2 rounded-2xl"
+          className="lg:col-span-2 rounded-none"
         />
 
         {/* 4. Fluid Systems */}
@@ -73,7 +73,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-2 rounded-2xl"
+          className="lg:col-span-2 rounded-none"
         />
 
         {/* 5. Actuation and Motion */}
@@ -88,7 +88,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-2 rounded-2xl"
+          className="lg:col-span-2 rounded-none"
         />
 
         {/* 6. Avionics and Aerospace */}
@@ -103,7 +103,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-3 rounded-2xl"
+          className="lg:col-span-3 rounded-none"
         />
 
         {/* 7. Materials */}
@@ -118,7 +118,7 @@ export default function FUIBentoGridDark() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 mix-blend-luminosity hover:mix-blend-normal"
             />
           }
-          className="lg:col-span-3 rounded-2xl"
+          className="lg:col-span-3 rounded-none"
         />
       </div>
     </section>
@@ -150,11 +150,12 @@ export function BentoCard({
       data-dark={dark ? "true" : undefined}
       className={clsx(
         className,
-        "group relative flex flex-col overflow-hidden",
+        "group relative flex flex-col overflow-hidden rounded-none",
         "bg-zinc-950/80 border border-white/10 shadow-lg transition-all duration-300 hover:border-[#eab308]/50"
       )}
+      style={{ borderRadius: 0 }}
     >
-      <div className="relative h-[22rem] shrink-0 overflow-hidden bg-black">
+      <div className="relative h-[22rem] shrink-0 overflow-hidden bg-black" style={{ borderRadius: 0 }}>
         {graphic}
         {fade.includes("top") && (
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-transparent opacity-80 pointer-events-none" />
@@ -163,7 +164,10 @@ export function BentoCard({
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent opacity-90 pointer-events-none" />
         )}
       </div>
-      <div className="relative p-8 z-20 isolate mt-[-80px] backdrop-blur-xl bg-zinc-950/80 border-t border-white/5 text-white flex-1 flex flex-col justify-between">
+      <div 
+        className="relative p-8 z-20 isolate mt-[-80px] backdrop-blur-xl bg-zinc-950/80 border-t border-white/5 text-white flex-1 flex flex-col justify-between"
+        style={{ borderRadius: 0 }}
+      >
         <div>
           <div>{eyebrow}</div>
           <h3 className="mt-2 text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#eab308] transition-colors">

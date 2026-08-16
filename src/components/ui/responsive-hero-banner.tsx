@@ -45,13 +45,13 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             {/* Subtle Vignette Gradient Overlay */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
 
-            {/* Unified Floating Navbar Pill (Logo + Links + Button in ONE pill) */}
+            {/* Unified Floating Navbar (Razor Sharp Edges) */}
             <header className="fixed top-6 left-0 right-0 z-30 flex justify-center items-center px-4">
                 <div 
-                    className="flex items-center gap-3 sm:gap-6 rounded-full bg-neutral-950/85 border border-white/20 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10"
-                    style={{ padding: '6px 8px 6px 16px' }}
+                    className="flex items-center gap-3 sm:gap-6 rounded-none bg-neutral-950/85 border border-white/20 backdrop-blur-2xl shadow-2xl ring-1 ring-white/10"
+                    style={{ padding: '6px 8px 6px 16px', borderRadius: 0 }}
                 >
-                    {/* Brand Logo inside the pill */}
+                    {/* Brand Logo */}
                     <a
                         href="#"
                         className="inline-flex items-center pr-2"
@@ -60,14 +60,14 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         <img src={logoUrl} alt="MedPrax Engineering" className="h-7 sm:h-8 w-auto" />
                     </a>
 
-                    {/* Navigation Links inside the pill */}
+                    {/* Navigation Links */}
                     <nav className="hidden md:flex items-center gap-1">
                         {navLinks.map((link, index) => (
                             <a
                                 key={index}
                                 href={link.href}
-                                style={{ padding: '8px 16px' }}
-                                className={`text-sm font-medium hover:text-white font-sans transition-colors rounded-full ${
+                                style={{ padding: '8px 16px', borderRadius: 0 }}
+                                className={`text-sm font-medium hover:text-white font-sans transition-colors rounded-none ${
                                     link.isActive ? 'text-white font-semibold' : 'text-neutral-300'
                                 }`}
                             >
@@ -76,11 +76,11 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         ))}
                     </nav>
 
-                    {/* Contact Us CTA Button inside the pill with proper padding */}
+                    {/* Contact Us CTA Button with sharp edges */}
                     <button
                         onClick={onOpenRFQ}
-                        style={{ padding: '10px 22px' }}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-white text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-sans transition-all cursor-pointer shadow-md hover:scale-105"
+                        style={{ padding: '10px 22px', borderRadius: 0 }}
+                        className="inline-flex items-center gap-1.5 rounded-none bg-white text-sm font-bold text-neutral-950 hover:bg-neutral-100 font-sans transition-all cursor-pointer shadow-md hover:scale-105"
                     >
                         <span>{ctaButtonText}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
@@ -92,7 +92,7 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                     {/* Mobile Hamburger toggle */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white"
+                        className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-none bg-white/10 text-white"
                         aria-expanded={mobileMenuOpen}
                         aria-label="Toggle menu"
                     >
@@ -106,8 +106,8 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
                 {mobileMenuOpen && (
                     <div 
-                        className="md:hidden mt-3 bg-neutral-950/95 backdrop-blur-2xl rounded-2xl border border-white/20 flex flex-col gap-3 shadow-2xl max-w-xs w-full"
-                        style={{ padding: '16px' }}
+                        className="md:hidden mt-3 bg-neutral-950/95 backdrop-blur-2xl rounded-none border border-white/20 flex flex-col gap-3 shadow-2xl max-w-xs w-full"
+                        style={{ padding: '16px', borderRadius: 0 }}
                     >
                         {navLinks.map((link, index) => (
                             <a
@@ -148,12 +148,12 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         {description}
                     </p>
 
-                    {/* Single "Contact Us" CTA Button with generous padding */}
+                    {/* Single "Contact Us" CTA Button (Razor Sharp) */}
                     <div className="flex items-center justify-center animate-fade-slide-in-3">
                         <button
                             onClick={onOpenRFQ}
-                            style={{ padding: '14px 36px', fontSize: '15px' }}
-                            className="inline-flex items-center justify-center gap-2 hover:bg-neutral-100 font-bold text-neutral-950 bg-white rounded-full font-sans shadow-[0_0_30px_rgba(255,255,255,0.25)] transition-all cursor-pointer hover:scale-105"
+                            style={{ padding: '14px 36px', fontSize: '15px', borderRadius: 0 }}
+                            className="inline-flex items-center justify-center gap-2 hover:bg-neutral-100 font-bold text-neutral-950 bg-white rounded-none font-sans shadow-[0_0_30px_rgba(255,255,255,0.25)] transition-all cursor-pointer hover:scale-105"
                         >
                             <span>Contact Us</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
