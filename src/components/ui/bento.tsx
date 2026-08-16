@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 
 export default function FUIBentoGridDark() {
   return (
-    <section id="components" className="py-24 container mx-auto px-6 max-w-7xl">
-      <div className="flex flex-col mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-spline">
+    <section id="components" className="py-32 container mx-auto px-6 max-w-7xl">
+      {/* Center-aligned Section Header with generous padding */}
+      <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white font-spline">
           Components
         </h2>
-        <p className="max-w-3xl text-lg sm:text-xl font-medium tracking-tight mt-3 text-white/70 font-spline">
+        <p className="text-lg sm:text-xl font-medium tracking-tight mt-4 text-white/70 font-spline">
           Precision-engineered hardware building blocks manufactured to extreme tolerances.
         </p>
       </div>
