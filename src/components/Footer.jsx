@@ -5,7 +5,13 @@ export default function Footer() {
     <footer className="engineering-footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <span className="brand-name">VULCAN<span>.TECH</span></span>
+          <a href="#" aria-label="MedPrax Engineering">
+            <img 
+              src="/logoEngineering.svg" 
+              alt="MedPrax Engineering Logo" 
+              className="footer-logo-img"
+            />
+          </a>
           <p className="footer-claim">Catering to companies building in Deep Tech.</p>
         </div>
         <div className="footer-links">

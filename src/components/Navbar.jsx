@@ -14,8 +14,12 @@ export default function Navbar() {
   return (
     <header className={`navbar-header ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container nav-container">
-        <a href="#" className="nav-logo">
-          <span className="brand-name">VULCAN<span>.TECH</span></span>
+        <a href="#" className="nav-logo" aria-label="MedPrax Engineering">
+          <img 
+            src="/logoEngineering.svg" 
+            alt="MedPrax Engineering Logo" 
+            className="brand-logo-img"
+          />
         </a>
 
         <nav className="nav-links">

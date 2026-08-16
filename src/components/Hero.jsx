@@ -4,7 +4,7 @@ import MoltenMetal from './MoltenMetal';
 export default function Hero({ onOpenRFQ }) {
   return (
     <section className="hero-section">
-      {/* Molten Metal Shader in Yellow on Black */}
+      {/* Molten Metal Shader - Autonomous Procedural Flow without Cursor Tracking */}
       <div className="hero-shader-backdrop">
         <MoltenMetal
           color1="#000000"
@@ -22,8 +22,8 @@ export default function Hero({ onOpenRFQ }) {
           colorMode="molten"
           grain={true}
           grainIntensity={0.04}
-          mouseInteraction={true}
-          mouseStrength={0.32}
+          mouseInteraction={false}
+          mouseStrength={0}
           opacity={0.96}
         />
         <div className="shader-gradient-overlay"></div>
@@ -31,14 +31,14 @@ export default function Hero({ onOpenRFQ }) {
 
       <div className="container hero-content-wrapper">
         <h1 className="hero-headline">
-          Deep Tech Manufacturing
+          MedPrax Engineering
         </h1>
 
         <p className="hero-lead-text">
           Catering to companies building in Deep Tech. We help you build <strong>Medical Devices</strong>, <strong>Defense &amp; Aerospace Platforms</strong>, <strong>Industrial Technology</strong>, and more. We will help companies manufacture.
         </p>
 
-        {/* The One Single CTA */}
+        {/* Single Primary Action */}
         <div className="hero-actions-row">
           <button className="btn-primary btn-hero-cta" onClick={onOpenRFQ}>
             Request Engineering Review
