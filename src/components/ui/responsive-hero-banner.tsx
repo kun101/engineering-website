@@ -13,8 +13,6 @@ export interface ResponsiveHeroBannerProps {
     backgroundImageUrl?: string;
     navLinks?: NavLink[];
     ctaButtonText?: string;
-    badgeText?: string;
-    badgeLabel?: string;
     title?: string;
     titleLine2?: string;
     description?: string;
@@ -29,8 +27,6 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
         { label: "Subsystems", href: "#subsystems" }
     ],
     ctaButtonText = "Contact Us",
-    badgeLabel = "New",
-    badgeText = "Deep Tech Precision Manufacturing 2026",
     title = "MedPrax Engineering",
     titleLine2 = "Hardware for Deep Tech",
     description = "Catering to companies building in Deep Tech. We help you build Medical Devices, Defense & Aerospace Platforms, Industrial Technology, and more. We will help companies manufacture.",
@@ -47,7 +43,7 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 className="w-full h-full object-cover object-center absolute inset-0 z-0 pointer-events-none"
             />
             {/* Subtle Vignette Gradient Overlay */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 z-[1]" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
 
             {/* Unified Floating Navbar Pill (Logo + Links + Button in ONE pill) */}
             <header className="fixed top-6 left-0 right-0 z-30 flex justify-center items-center px-4">
@@ -134,25 +130,9 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 style={{ padding: '120px 24px 60px' }}
             >
                 <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                    {/* Badge */}
-                    <div 
-                        className="inline-flex items-center gap-3 rounded-full bg-neutral-900/80 border border-white/20 backdrop-blur-xl shadow-lg animate-fade-slide-in-1"
-                        style={{ padding: '8px 16px', marginBottom: '28px' }}
-                    >
-                        <span 
-                            className="inline-flex items-center text-xs font-bold text-neutral-950 bg-white rounded-full font-sans tracking-wide uppercase"
-                            style={{ padding: '3px 10px' }}
-                        >
-                            {badgeLabel}
-                        </span>
-                        <span className="text-sm font-medium text-white/90 font-sans">
-                            {badgeText}
-                        </span>
-                    </div>
-
                     {/* Headline */}
                     <h1 
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-normal font-instrument-serif animate-fade-slide-in-2"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-normal font-instrument-serif animate-fade-slide-in-1"
                         style={{ marginBottom: '28px', lineHeight: 1.12 }}
                     >
                         {title}
@@ -162,14 +142,14 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
                     {/* Narrative Description */}
                     <p 
-                        className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto font-sans animate-fade-slide-in-3"
+                        className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto font-sans animate-fade-slide-in-2"
                         style={{ marginBottom: '36px', lineHeight: 1.7 }}
                     >
                         {description}
                     </p>
 
                     {/* Single "Contact Us" CTA Button with generous padding */}
-                    <div className="flex items-center justify-center animate-fade-slide-in-4">
+                    <div className="flex items-center justify-center animate-fade-slide-in-3">
                         <button
                             onClick={onOpenRFQ}
                             style={{ padding: '14px 36px', fontSize: '15px' }}
