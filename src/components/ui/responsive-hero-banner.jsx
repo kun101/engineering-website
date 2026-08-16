@@ -17,16 +17,71 @@ export default function ResponsiveHeroBanner({
 
     return (
         <section className="w-full isolate min-h-screen overflow-hidden relative bg-black flex flex-col justify-between items-center">
-            {/* Background Solar Arc Flare Image with Continuous Planet Rotation */}
+            {/* Background Solar Arc Planetary Image (Static Perfect Framing) */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <img
                     src={backgroundImageUrl}
-                    alt="Background Flare"
-                    className="w-full h-full object-cover object-center animate-planet-rotate"
+                    alt="Background Planetary Flare"
+                    className="w-full h-full object-cover object-center"
                 />
             </div>
+
+            {/* Glowing Light Beam Animating Along the Planetary Circular Arc */}
+            <svg 
+                className="absolute inset-0 w-full h-full pointer-events-none z-[1]" 
+                viewBox="0 0 1920 1080" 
+                preserveAspectRatio="none"
+            >
+                <defs>
+                    <linearGradient id="orbitalBeamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+                        <stop offset="40%" stopColor="#facc15" stopOpacity="0.8" />
+                        <stop offset="70%" stopColor="#ffffff" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#f97316" stopOpacity="0.2" />
+                    </linearGradient>
+                    <filter id="orbitalGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="6" result="blur1" />
+                        <feGaussianBlur stdDeviation="18" result="blur2" />
+                        <feMerge>
+                            <feMergeNode in="blur2" />
+                            <feMergeNode in="blur1" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                {/* Ambient Subtle Base Glow along the arc */}
+                <path 
+                    d="M -80 140 C 580 180, 1140 480, 2020 1140" 
+                    fill="none" 
+                    stroke="rgba(234, 179, 8, 0.15)" 
+                    strokeWidth="4" 
+                    className="animate-orbital-ambient"
+                />
+
+                {/* Primary Fast Moving Luminous Light Streak */}
+                <path 
+                    d="M -80 140 C 580 180, 1140 480, 2020 1140" 
+                    fill="none" 
+                    stroke="url(#orbitalBeamGrad)" 
+                    strokeWidth="3.5" 
+                    filter="url(#orbitalGlow)"
+                    className="animate-orbital-beam-1"
+                />
+
+                {/* Secondary Cascading Light Particle Pulse */}
+                <path 
+                    d="M -80 140 C 580 180, 1140 480, 2020 1140" 
+                    fill="none" 
+                    stroke="url(#orbitalBeamGrad)" 
+                    strokeWidth="2.5" 
+                    filter="url(#orbitalGlow)"
+                    className="animate-orbital-beam-2"
+                />
+            </svg>
+
             {/* Subtle Vignette Gradient Overlay */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[2]" />
 
             {/* Unified Floating Navbar (Razor Sharp Edges) */}
             <header className="fixed top-6 left-0 right-0 z-30 flex justify-center items-center px-4">
