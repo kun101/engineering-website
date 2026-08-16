@@ -17,7 +17,7 @@ export default function ResponsiveHeroBanner({
 
     return (
         <section className="w-full isolate min-h-screen overflow-hidden relative bg-black flex flex-col justify-between items-center">
-            {/* Background Solar Arc Planetary Image (Static Perfect Framing) */}
+            {/* Background Solar Arc Planetary Image */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <img
                     src={backgroundImageUrl}
@@ -26,23 +26,25 @@ export default function ResponsiveHeroBanner({
                 />
             </div>
 
-            {/* Glowing Light Beam Animating Along the Planetary Circular Arc */}
+            {/* Glowing Light Beam Animating Along the Red Marked Planetary Arc */}
             <svg 
                 className="absolute inset-0 w-full h-full pointer-events-none z-[1]" 
                 viewBox="0 0 1920 1080" 
                 preserveAspectRatio="none"
             >
                 <defs>
-                    <linearGradient id="orbitalBeamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="coronalBeamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-                        <stop offset="40%" stopColor="#facc15" stopOpacity="0.8" />
-                        <stop offset="70%" stopColor="#ffffff" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#f97316" stopOpacity="0.2" />
+                        <stop offset="35%" stopColor="#fef08a" stopOpacity="0.9" />
+                        <stop offset="65%" stopColor="#ffffff" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#ea580c" stopOpacity="0" />
                     </linearGradient>
-                    <filter id="orbitalGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="6" result="blur1" />
-                        <feGaussianBlur stdDeviation="18" result="blur2" />
+                    <filter id="coronalGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur2" />
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur3" />
                         <feMerge>
+                            <feMergeNode in="blur3" />
                             <feMergeNode in="blur2" />
                             <feMergeNode in="blur1" />
                             <feMergeNode in="SourceGraphic" />
@@ -50,33 +52,33 @@ export default function ResponsiveHeroBanner({
                     </filter>
                 </defs>
 
-                {/* Ambient Subtle Base Glow along the arc */}
+                {/* Base Glowing Path along the red marked planetary limb */}
                 <path 
-                    d="M -80 140 C 580 180, 1140 480, 2020 1140" 
+                    d="M 390 -40 C 780 120, 1280 430, 1780 1140" 
                     fill="none" 
-                    stroke="rgba(234, 179, 8, 0.15)" 
-                    strokeWidth="4" 
-                    className="animate-orbital-ambient"
-                />
-
-                {/* Primary Fast Moving Luminous Light Streak */}
-                <path 
-                    d="M -80 140 C 580 180, 1140 480, 2020 1140" 
-                    fill="none" 
-                    stroke="url(#orbitalBeamGrad)" 
+                    stroke="rgba(250, 204, 21, 0.25)" 
                     strokeWidth="3.5" 
-                    filter="url(#orbitalGlow)"
-                    className="animate-orbital-beam-1"
+                    className="animate-coronal-ambient"
                 />
 
-                {/* Secondary Cascading Light Particle Pulse */}
+                {/* Fast Flowing Coronal Photon Stream */}
                 <path 
-                    d="M -80 140 C 580 180, 1140 480, 2020 1140" 
+                    d="M 390 -40 C 780 120, 1280 430, 1780 1140" 
                     fill="none" 
-                    stroke="url(#orbitalBeamGrad)" 
-                    strokeWidth="2.5" 
-                    filter="url(#orbitalGlow)"
-                    className="animate-orbital-beam-2"
+                    stroke="url(#coronalBeamGrad)" 
+                    strokeWidth="4" 
+                    filter="url(#coronalGlow)"
+                    className="animate-coronal-beam-1"
+                />
+
+                {/* Secondary Cascading Energy Pulse */}
+                <path 
+                    d="M 390 -40 C 780 120, 1280 430, 1780 1140" 
+                    fill="none" 
+                    stroke="url(#coronalBeamGrad)" 
+                    strokeWidth="3" 
+                    filter="url(#coronalGlow)"
+                    className="animate-coronal-beam-2"
                 />
             </svg>
 
