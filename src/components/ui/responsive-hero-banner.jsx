@@ -17,12 +17,14 @@ export default function ResponsiveHeroBanner({
 
     return (
         <section className="w-full isolate min-h-screen overflow-hidden relative bg-black flex flex-col justify-between items-center">
-            {/* Background Solar Arc Flare Image */}
-            <img
-                src={backgroundImageUrl}
-                alt="Background Flare"
-                className="w-full h-full object-cover object-center absolute inset-0 z-0 pointer-events-none"
-            />
+            {/* Background Solar Arc Flare Image with Continuous Planet Rotation */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <img
+                    src={backgroundImageUrl}
+                    alt="Background Flare"
+                    className="w-full h-full object-cover object-center animate-planet-rotate"
+                />
+            </div>
             {/* Subtle Vignette Gradient Overlay */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
 

@@ -111,6 +111,25 @@ body {
   animation: fadeSlideIn 0.95s var(--ease-snappy) 0.3s both;
 }
 
+/* Continuous Planetary Orbital Rotation Animation */
+@keyframes planetRotate {
+  0% {
+    transform: scale(1.35) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.38) rotate(180deg);
+  }
+  100% {
+    transform: scale(1.35) rotate(360deg);
+  }
+}
+
+.animate-planet-rotate {
+  animation: planetRotate 120s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
 .font-instrument-serif {
   font-family: 'Instrument Serif', Georgia, serif;
 }
