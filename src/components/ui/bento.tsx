@@ -18,7 +18,7 @@ export default function FUIBentoGridDark() {
       <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-6 lg:grid-rows-3">
         {/* 1. Electronics */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">01 / Microelectronics</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Microelectronics</span>}
           title="Electronics"
           description="High-density multi-layer PCB assembly, rigid-flex circuitry, and ruggedized microelectronics engineered for extreme operating environments."
           graphic={
@@ -33,7 +33,7 @@ export default function FUIBentoGridDark() {
 
         {/* 2. Precision Machining & Mechanical */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">02 / Sub-Micron</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Sub-Micron</span>}
           title="Precision Machining & Mechanical"
           description="5-axis CNC milling, Swiss micro-turning, wire EDM, and sub-micron structural enclosures."
           graphic={
@@ -48,7 +48,7 @@ export default function FUIBentoGridDark() {
 
         {/* 3. Thermal Management */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">03 / Active Cooling</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Active Cooling</span>}
           title="Thermal Management"
           description="Microchannel cold plates, vapor chambers, and cryogenic phase-change thermal loops."
           graphic={
@@ -63,7 +63,7 @@ export default function FUIBentoGridDark() {
 
         {/* 4. Fluid Systems */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">04 / Hermetic</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Hermetic</span>}
           title="Fluid Systems"
           description="High-pressure diffusion-bonded manifolds, proportional micro-valves, and hermetic fluidics."
           graphic={
@@ -78,7 +78,7 @@ export default function FUIBentoGridDark() {
 
         {/* 5. Actuation and Motion */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">05 / Dynamics</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Dynamics</span>}
           title="Actuation and Motion"
           description="Frameless torque motors, zero-backlash harmonic drives, and precision linear stages."
           graphic={
@@ -93,7 +93,7 @@ export default function FUIBentoGridDark() {
 
         {/* 6. Avionics and Aerospace */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">06 / Flight Grade</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Flight Grade</span>}
           title="Avionics and Aerospace"
           description="Radiation-hardened flight chassis, CubeSat structures, and space-grade harness assemblies."
           graphic={
@@ -108,7 +108,7 @@ export default function FUIBentoGridDark() {
 
         {/* 7. Materials */}
         <BentoCard
-          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">07 / Advanced Alloys</span>}
+          eyebrow={<span className="text-[#eab308] text-xs font-semibold uppercase tracking-widest">Advanced Alloys</span>}
           title="Materials"
           description="Refractory superalloys, advanced technical ceramics, additive metals, and composite structures."
           graphic={
