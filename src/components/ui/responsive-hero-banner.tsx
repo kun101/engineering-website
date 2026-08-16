@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import PlanetShader from './PlanetShader';
 
 export interface NavLink {
     label: string;
@@ -10,7 +11,6 @@ export interface NavLink {
 
 export interface ResponsiveHeroBannerProps {
     logoUrl?: string;
-    backgroundImageUrl?: string;
     navLinks?: NavLink[];
     ctaButtonText?: string;
     title?: string;
@@ -21,7 +21,6 @@ export interface ResponsiveHeroBannerProps {
 
 export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
     logoUrl = "/logoEngineering.svg",
-    backgroundImageUrl = "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0e2dbea0-c0a9-413f-a57b-af279633c0df_3840w.jpg",
     navLinks = [
         { label: "Components", href: "#components" },
         { label: "Subsystems", href: "#subsystems" }
@@ -36,12 +35,9 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
     return (
         <section className="w-full isolate min-h-screen overflow-hidden relative bg-black flex flex-col justify-between items-center">
-            {/* Existing Planetary Background Image with Coronal Light Motion */}
-            <img
-                src={backgroundImageUrl}
-                alt=""
-                className="w-full h-full object-cover object-center absolute inset-0 z-0 pointer-events-none animate-planet-coronal"
-            />
+            {/* Real-time WebGL Fragment Shader with Light Moving Along the Planetary Arc */}
+            <PlanetShader />
+
             {/* Subtle Vignette Gradient Overlay */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/90 z-[1]" />
 
