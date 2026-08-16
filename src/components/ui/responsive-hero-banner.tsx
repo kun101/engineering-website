@@ -125,16 +125,16 @@ export const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 className="z-10 relative flex-1 flex flex-col items-center justify-center my-auto w-full"
                 style={{ padding: '120px 24px 60px' }}
             >
-                <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                    {/* Headline in 2 Lines: Line 1 Main, Line 2 Smaller */}
+                <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
+                    {/* Headline: Line 1 (Engineering Hardware) fits in 1 single line, Line 2 (for Deep Tech) smaller */}
                     <h1 
                         className="font-bold text-white tracking-tight font-spline animate-fade-slide-in-1"
-                        style={{ marginBottom: '28px' }}
+                        style={{ marginBottom: '24px' }}
                     >
-                        <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05]">
+                        <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight">
                             {title}
                         </span>
-                        <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white/80 mt-3 leading-[1.1] tracking-normal">
+                        <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white/80 mt-2.5 leading-[1.15] tracking-normal">
                             {subtitle}
                         </span>
                     </h1>
